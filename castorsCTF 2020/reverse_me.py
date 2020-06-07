@@ -1,0 +1,13 @@
+cipher = [0x64, 0x35, 0x68, 0x35, 0x64, 0x37,
+		 0x33, 0x7a, 0x38, 0x6b, 0x33, 0x37, 
+		 0x6b, 0x72, 0x67, 0x7a]
+flag = ""
+for c in cipher:
+	space = 0
+	for i in range(97, 123):
+		if (i - 87) % 26 == c - 97:
+			flag += chr(i - 2)
+			space = 1
+	if space == 0:
+		flag += chr(c - 2)
+print(flag)
