@@ -112,7 +112,7 @@ Flag: **nactf{hamm1ng_cod3s_546mv3q9a0te}** (oke Hamming code) :)))
 
 Note: enc.txt has been reuploaded. Please redownload the file if you downloaded before 12:00 am 10/31
 
-**Solution**: Lần này đề cũng có [enc.txt](enc2txt) và error2.py
+**Solution**: Lần này đề cũng có [enc.txt](enc2.txt) và error2.py
 
 ```python
 import random
