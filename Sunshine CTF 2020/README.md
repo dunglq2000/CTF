@@ -104,6 +104,8 @@ Code exploit ở [chall02.py](chall02.py)
 
 ![exploit](sr2solve.png)
 
+Flag: **sun{warmness-on-the-soul-3b6aad1d8bb54732}**
+
 ### speedrun-04
 
 **Description**
@@ -120,6 +122,8 @@ Code exploit ở [chall04.py](chall04.py)
 
 ![exploit](sr4solve.png)
 
+Flag: **sun{critical-acclaim-96cfde3d068e77bf}**
+
 ### speedrun-05
 
 **Description**
@@ -135,5 +139,7 @@ Tương tự bài **speedrun-04**, mình sẽ ghi đè *local_10* địa chỉ h
 Code exploit ở [chall05.py](chall05.py)
 
 ![exploit](sr5solve.png)
+
+Flag: **sun{chapter-four-9ca97769b74345b1}**
 
 Cám ơn các bạn đã đọc writeup của mình :)))
