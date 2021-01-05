@@ -31,7 +31,7 @@ Flag: **EFIENSCTF{Now_you_know_ECB_is_weak_;)_}**
 
 Các bạn xem đề ở [đây](fourtimepad.py)
 
-Đề bài sử dụng 4 seed bị giấu để sinh ra 4 số random a, b, c, d và cho chúng ta biết *magic number* là ~(a)^(b&c)^(c|d) và *ciphertext* là ct=flag^a^b^c^d. Ở đây mình bruteforce b, c, d và dựa trên hàm **twist** để tìm lại a. Tức là a=~(magic_number ^ (b&c) ^ (c|d))
+Đề bài sử dụng 4 seed bị giấu để sinh ra 4 số random a, b, c, d và cho chúng ta biết *magic number* là \~(a)^(b&c)^(c|d) và *ciphertext* là ct=flag^a^b^c^d. Ở đây mình bruteforce b, c, d và dựa trên hàm **twist** để tìm lại a. Tức là a=\~(magic_number ^ (b&c) ^ (c|d))
 
 Code của mình ở [đây](fourtimepad_solve.py)
 
@@ -55,4 +55,4 @@ Các bạn xem đề ở [đây](rot1000.py)
 
 Code của mình ở [đây](rot1000_solve.py)
 
-Flag: **EFIENSCTF{\_WARMUP_BABE_:)_ENJOY_THE_CTF_}**
+Flag: **EFIENSCTF{\_WARMUP_BABE_:)\_ENJOY_THE_CTF_}**
