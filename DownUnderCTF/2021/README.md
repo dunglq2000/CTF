@@ -20,7 +20,7 @@ print(enc)
 
 ```
 
-Bài này khá đơn giản, lấy giá trị của ký tự $$c$$, bỏ vào hàm $$f(x) = 13x^2+3x+7$$ là ra giá trị (unicode). Nên mình copy paste output từ file vào string và bruteforce xem với ký tự nào thì cho ra unicode đó.
+Bài này khá đơn giản, lấy giá trị của ký tự $c$, bỏ vào hàm $f(x) = 13x^2+3x+7$ là ra giá trị (unicode). Nên mình copy paste output từ file vào string và bruteforce xem với ký tự nào thì cho ra unicode đó.
 
 Flag: **DUCTF{sh0uld'v3_us3d_r0t_13}**
 
@@ -47,17 +47,17 @@ print(enc)
 
 ```
 
-Bài này nâng cao hơn bài trước, với bộ **CHARSET** có sẵn, chương trình sinh random 1 hàm $$f$$ bậc 6 trên $$GF(47)$$ (độ dài charset), tức là $$f$$ sẽ có dạng $$a_6 x^6 + a_5 x^5 + \cdots + a_1 x + a_0$$.
+Bài này nâng cao hơn bài trước, với bộ **CHARSET** có sẵn, chương trình sinh random 1 hàm $f$ bậc 6 trên $GF(47)$ (độ dài charset), tức là $f$ sẽ có dạng $a_6 x^6 + a_5 x^5 + \cdots + a_1 x + a_0$.
 
-Với mỗi ký tự $$c$$ của flag, ta lấy index của nó trong **CHARSET** rồi đưa vào hàm $$f$$, sau đó lấy **CHARSET** tại kết quả. Mình sẽ tìm lại hàm $$f$$.
+Với mỗi ký tự $c$ của flag, ta lấy index của nó trong **CHARSET** rồi đưa vào hàm $f$, sau đó lấy **CHARSET** tại kết quả. Mình sẽ tìm lại hàm $f$.
 
-Mình đã biết các cặp plaintext-ciphertext tại vị trí tương ứng với **DUCTF{** và **}**, tức là 6 ký tự đầu và ký tự cuối của plaintext và ciphertext, vừa đủ cho 7 hệ số của $$f$$ :))
+Mình đã biết các cặp plaintext-ciphertext tại vị trí tương ứng với **DUCTF{** và **}**, tức là 6 ký tự đầu và ký tự cuối của plaintext và ciphertext, vừa đủ cho 7 hệ số của $f$ :))
 
-Gọi $$x_0, x_1, \cdots, x_6$$ tương ứng là index của **DUCTF{}**. Gọi $$y_0, y_1, \cdots, y_6$$ tương ứng là index của ciphertext ứng với **DUCTF{}** (6 ký tự đầu và ký tự cuối của ciphertext)
+Gọi $x_0, x_1, \cdots, x_6$ tương ứng là index của **DUCTF{}**. Gọi $y_0, y_1, \cdots, y_6$ tương ứng là index của ciphertext ứng với **DUCTF{}** (6 ký tự đầu và ký tự cuối của ciphertext)
 
-Như vậy, $$y_i = a_6 x_i^6 + a_5 x_i^5 + \cdots a_1 x_i + a_0$$, viết dưới dạng ma trận sẽ là $$\begin{pmatrix}x_0^0 & x_0^1 & \cdots & x_0^6 \\ x_1^0 & x_1^1 & \cdots & x_1^6 \\ \cdots & \cdots & \cdots & \cdots \\ x_6^0 & x_6^1 & \cdots & x_6^6\end{pmatrix} \begin{pmatrix}a_0 \\ a_1 \\ \cdots \\ a_6\end{pmatrix}=\begin{pmatrix}y_0 \\ y_1 \\ \cdots \\ y_6 \end{pmatrix}$$
+Như vậy, $y_i = a_6 x_i^6 + a_5 x_i^5 + \cdots a_1 x_i + a_0$, viết dưới dạng ma trận sẽ là $\begin{pmatrix}x_0^0 & x_0^1 & \cdots & x_0^6 \\ x_1^0 & x_1^1 & \cdots & x_1^6 \\ \cdots & \cdots & \cdots & \cdots \\ x_6^0 & x_6^1 & \cdots & x_6^6\end{pmatrix} \begin{pmatrix}a_0 \\ a_1 \\ \cdots \\ a_6\end{pmatrix}=\begin{pmatrix}y_0 \\ y_1 \\ \cdots \\ y_6 \end{pmatrix}$
 
-Tính inverse thì mình có $$\begin{pmatrix}a_0 & a_1 & \cdots & a_6\end{pmatrix}$$ và làm giống bài trên. Tuy nhiên có thể có nhiều kết quả flag nên mình sẽ lấy cái có ý nghĩa.
+Tính inverse thì mình có $\begin{pmatrix}a_0 & a_1 & \cdots & a_6\end{pmatrix}$ và làm giống bài trên. Tuy nhiên có thể có nhiều kết quả flag nên mình sẽ lấy cái có ý nghĩa.
 
 Flag: **DUCTF{go0d_0l'_l4gr4ng3}** (nhà toán học Lagrange đấy :v)
 
@@ -182,21 +182,21 @@ if __name__ == '__main__':
 
 ```
 
-Gọi $$S$$ là **REAL_COORD** bị giấu, hàm **create_shares** thực hiện như sau:
+Gọi $S$ là **REAL_COORD** bị giấu, hàm **create_shares** thực hiện như sau:
 
-- Chọn random 2 số $$r_1$$ và $$r_2$$
-- Lần lượt tính $$s_1 = r_1 r_2 S \pmod p$$, $$s_2 = r_1^2 r_2 S \pmod p$$ và $$s_3 = r_1 r_2^2 S \pmod p$$
-- Trả về ($$s_1$$, $$s_2$$, $$s_3$$) và leak cho mình $$s_1$$
+- Chọn random 2 số $r_1$ và $r_2$
+- Lần lượt tính $s_1 = r_1 r_2 S \pmod p$, $s_2 = r_1^2 r_2 S \pmod p$ và $s_3 = r_1 r_2^2 S \pmod p$
+- Trả về ($s_1$, $s_2$, $s_3$) và leak cho mình $s_1$
 
 Tiếp theo, hàm **run_combiner** cần mình input 1 số nguyên mình đặt là $$t$$, lấy $$s_2$$ và $$s_3$$ ở trên đưa vào **reveal_secret** và trả về $$t^3 (s_2 s_3)^{-1} \pmod p$$
 
-Sau đó mình cần input 1 số $$t'$$, cũng với $$s_2$$ và $$s_3$$ ở trên qua hàm **reveal_secret** trả về **FAKE_COORDS**. Tức là $$FAKE_COORDS = t'^3 (s_2 s_3)^{-1} \pmod p$$
+Sau đó mình cần input 1 số $t'$, cũng với $s_2$ và $s_3$ ở trên qua hàm **reveal_secret** trả về **FAKE_COORDS**. Tức là $FAKE_COORDS = t'^3 (s_2 s_3)^{-1} \pmod p$
 
 Ý tưởng của mình như sau:
 
-- Mình cho $$t=1$$ cho dễ tính, khi đó giá trị trả về ở **run_combiner** lần đầu sẽ là $$(s_2 s_3)^{-1} \pmod p$$, lấy nghịch đảo sẽ được $$s_2 s_3 \pmod p$$
-- Tiếp theo, mình có $$x = t'^3 = FAKE_COORDS \cdot (s_2 s_3) \pmod p$$, tính $$phi(p)=p-1$$ rồi $$d = 3^{-1} \pmod p$$ rồi $$t'=x^d \pmod p$$ (nói chung là RSA)
-- Có $$t'$$ rồi thì submit lên, read server tới khi flag lòi ra thôi :))
+- Mình cho $t=1$ cho dễ tính, khi đó giá trị trả về ở **run_combiner** lần đầu sẽ là $(s_2 s_3)^{-1} \pmod p$, lấy nghịch đảo sẽ được $s_2 s_3 \pmod p$
+- Tiếp theo, mình có $x = t'^3 = FAKE_COORDS \cdot (s_2 s_3) \pmod p$, tính $phi(p)=p-1$ rồi $d = 3^{-1} \pmod p$ rồi $t'=x^d \pmod p$ (nói chung là RSA)
+- Có $t'$ rồi thì submit lên, có $s_1$ và $s_2 s_3$ rồi thì tính $REAL_COORDS = s_1 (s_2 s_3)^{-1} \pmod p$, rồi read server tới khi flag lòi ra thôi :))
 
 Flag: **DUCTF{m4yb3_th3_r34L_tr34sur3_w4s_th3_fr13nDs_w3_m4d3_al0ng_Th3_W4y.......}** (dài vl)
 
