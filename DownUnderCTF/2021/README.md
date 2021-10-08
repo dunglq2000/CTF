@@ -1,1 +1,1 @@
-[Solution](https://github.com/dunglq2000/CTF/tree/master/DownUnderCTF/2021/solve.ipynb)
+[Solution](https://nbviewer.org/github/dunglq2000/CTF/blob/master/DownUnderCTF/2021/solve.ipynb)
