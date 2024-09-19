@@ -1,3 +1,1 @@
-[Writeup Minimalaestic](https://nbviewer.org/github/dunglq2000/CTF/blob/master/2023/AmateursCTF/Minimalaestic/Minimalaestic.ipynb)
-
-[Writeup Owo Time Pad](https://nbviewer.org/github/dunglq2000/CTF/blob/master/2023/AmateursCTF/OwO%20Time%20Pad/owotimepad.ipynb)
+Writeup ở [đây](https://dunglq2000.github.io/mathematics/ctf/2024/AmateursCTF-2023.html).
